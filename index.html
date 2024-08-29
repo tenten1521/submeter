@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy Consumption Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.sheetjs.com/xlsx-0.19.2/xlsx.full.min.js"></script>
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Energy Consumption Calculator</h1>
+    </header>
+    
+    <main>
+        <section id="calculator">
+            <h2>Calculate Energy Consumption and Cost</h2>
+            <form id="energyCalcForm">
+                <label for="apartmentSelect">Select Apartment:</label>
+                <select id="apartmentSelect">
+                    <option value="1">Apartment 1</option>
+                    <option value="2">Apartment 2</option>
+                    <option value="3">Apartment 3</option>
+                    <option value="4">Apartment 4</option>
+                    <option value="5">Apartment 5</option>
+                    <option value="6">Apartment 6</option>
+                    <option value="7">Apartment 7</option>
+                </select>
+                
+                <label for="currentReading">Current Reading (kWh):</label>
+                <input type="number" id="currentReading" name="currentReading" step="0.01" required>
+                
+                <label for="previousReading">Previous Reading (kWh):</label>
+                <input type="number" id="previousReading" name="previousReading" step="0.01" required>
+                
+                <label for="costPerKwh">Cost per kWh ($):</label>
+                <input type="number" id="costPerKwh" name="costPerKwh" step="0.01" required>
+                
+                <button type="button" onclick="calculateEnergy()">Calculate</button>
+                <button type="button" id="generateExcel">Generate Excel File</button>
+            </form>
+            
+            <h3>Results:</h3>
+            <p id="result">Results will be displayed here.</p>
+            
+            <h3>History:</h3>
+            <ul id="history1"></ul>
+            <ul id="history2"></ul>
+            <ul id="history3"></ul>
+            <ul id="history4"></ul>
+            <ul id="history5"></ul>
+            <ul id="history6"></ul>
+            <ul id="history7"></ul>
+        </section>
+    </main>
+    
+    
+</body>
+</html>
